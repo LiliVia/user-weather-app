@@ -1,9 +1,0 @@
-<div class="forecast">
-  <div class="temp">{{data.current_weather.temperature}}°C</div>
-  <p class="icon" [ngSwitch]="weatherIconType">
-    <img *ngSwitchCase="1" src="https://bmcdn.nl/assets/weather-icons/v2.0/fill/clear-day.svg" alt="Partly Cloudy Day" height="48"/>
-    <img *ngSwitchCase="2" src="https://bmcdn.nl/assets/weather-icons/v2.0/fill/partly-cloudy-day.svg" alt="Partly Cloudy Day" height="48"/>
-    <img *ngSwitchCase="3" src="https://bmcdn.nl/assets/weather-icons/v2.0/fill/rain.svg" alt="Rain" height="48"/>
-    <img *ngSwitchDefault src="https://bmcdn.nl/assets/weather-icons/v2.0/fill/tornado.svg" alt="Tornado" height="48"/>
-  </p>
-</div>

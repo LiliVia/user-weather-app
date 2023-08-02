@@ -1,7 +1,0 @@
-{
-  "/api/*": {
-    "target": "https://api.open-meteo.com/v1/forecast",
-    "secure": false,
-    "loglevel": "debug"
-  }
-}
