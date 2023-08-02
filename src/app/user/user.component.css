@@ -1,0 +1,39 @@
+
+.users {
+  list-style-type: none;
+  padding: 0;
+}
+
+.users li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.users .user-img {
+  margin: 0.3rem;
+  padding: 0.8rem;
+}
+
+
+.users .badge {
+  padding: 0.5rem 0.6rem;
+  color: white;
+  background-color: #52747a;
+  margin-right: 0.8rem;
+  border-radius: 4px 0 0 4px;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 550px) {
+  .users li {
+    flex-wrap: wrap;
+  }
+
+  /* .users li button {
+    justify-self: center;
+  } */
+}
