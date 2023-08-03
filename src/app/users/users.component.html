@@ -1,10 +1,14 @@
-<h3 *ngIf="!users.length">You can see here your saved users list</h3>
+<h3 *ngIf="!users.length; else ClearStorage">You can see here your saved users list</h3>
 
 <app-user 
   [users]="users"
   [isUsersList]="true">
 </app-user>
-<button *ngIf="users.length" type="button" class="save" title="save user"
-  (click)="clearStorage()">
-  Delete All Users
-</button>
+<ng-template #ClearStorage>
+<div class="btn-block">
+  <button type="button" class="delete" title="delete users"
+    (click)="clearStorage()">
+    Delete All Users
+  </button>
+</div>
+</ng-template>
