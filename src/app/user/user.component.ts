@@ -45,18 +45,9 @@ export class UserComponent implements OnInit {
       .subscribe();
   }
 
-  getForecast() {
-    this.userService.getWeather(this.user[0].location)
-    .pipe(
-      tap((result) => console.log(result))
-      )
-      .subscribe();
-  }
-    
   saveUser(user: User) {
     this.userService.addUserToStorage(user);
     this.userIsSaved = true;
   }
-
 
 }

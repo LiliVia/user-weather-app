@@ -5,9 +5,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { HttpErrorHandler } from './http-error-handler.service';
 import { MessageService } from './message.service';
-import { UserComponent } from './user/user.component';
-import { WeatherComponent } from './weather/weather.component';
-import { UsersComponent } from './users/users.component';
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -16,13 +13,10 @@ import { AppRoutingModule } from './app-routing.module';
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   declarations: [
     AppComponent,
-    UserComponent,
-    WeatherComponent,
-    UsersComponent,
   ],
   providers: [
     HttpErrorHandler,

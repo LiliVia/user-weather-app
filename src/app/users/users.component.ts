@@ -19,7 +19,7 @@ export class UsersComponent {
 
   getUsers() {
     this.users = this.userService.getSavedUsers();
-    console.log(this.users)
+    // console.log(this.users)
   }
 
   clearStorage() {
