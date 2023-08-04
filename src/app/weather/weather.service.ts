@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { Weather } from './weather';
+import { Forecast, Weather } from './weather';
 
 @Injectable({
   providedIn: 'root'
@@ -9,19 +9,28 @@ export class WeatherService {
 
   constructor() { }
 
+  parseWeatherDate(weather: Weather): Forecast {
+    const dayTempSet = new Set(weather.hourly.temperature_2m.slice(0, 24));
+    return {
+      current: weather.current_weather.temperature,
+      highest: Math.max(...dayTempSet),
+      lowest: Math.min(...dayTempSet),
+    };
+  }
+
   setWeatherIcon(data: Weather): number {
     let iconType = 0;
     const weatherCode = data.current_weather.weathercode;
     if (weatherCode <= 3) {
-      return iconType = 1
+      return iconType = 1;
     }
     if (weatherCode > 3 && weatherCode <= 51) {
-      return iconType = 2
+      return iconType = 2;
     }
     if (weatherCode > 51 && weatherCode <= 67) {
-      return iconType = 3
+      return iconType = 3;
     } else {
-      return iconType = 4
+      return iconType = 4;
     }
     
   }

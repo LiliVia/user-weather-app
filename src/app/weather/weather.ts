@@ -10,6 +10,12 @@ export interface Weather {
   }
 }
 
+export interface Forecast {
+  current: number; 
+  lowest: number;
+  highest: number;
+}
+
 // "latitude": 52.52,
 //   "longitude": 13.419,
 //   "elevation": 44.812,

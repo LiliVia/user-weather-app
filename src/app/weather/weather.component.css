@@ -1,4 +1,19 @@
 .forecast {
   margin: 0.3rem;
-  padding: 0.8rem;
+  padding: 0.6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.forecast .current {
+  font-weight: 600;
+}
+
+.forecast .day {
+  padding-top: 10px;
+}
+
+.forecast .day span {
+  padding: 0 3px;
 }

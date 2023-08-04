@@ -1,7 +1,7 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 import { WeatherService } from './weather.service';
-import { Weather } from './weather';
+import { Forecast, Weather } from './weather';
 
 
 @Component({
@@ -10,17 +10,19 @@ import { Weather } from './weather';
   providers: [WeatherService],
   styleUrls: ['./weather.component.css']
 })
-export class WeatherComponent {
+export class WeatherComponent implements OnInit {
   @Input() data!: Weather;
   weatherIconType = 1;
+  forecast!: Forecast;
 
   constructor(private weatherService: WeatherService) {}
 
   ngOnInit() {
-    this.setWeatherIcon();
+    this.setForecast(this.data);
   }
 
-  private setWeatherIcon() {
-    this.weatherIconType = this.weatherService.setWeatherIcon(this.data);
+  private setForecast(data: Weather): void {
+    this.weatherIconType = this.weatherService.setWeatherIcon(data);
+    this.forecast = this.weatherService.parseWeatherDate(data);
   }
 }
